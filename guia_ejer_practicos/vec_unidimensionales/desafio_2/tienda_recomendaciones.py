@@ -1,16 +1,17 @@
 import funciones as fn
 
-
+usuario1 = ['Arroz', 'Atun', 'Queso', 'Tomate', 'Leche']
+usuario2 = ['Tomate', 'Huevo', 'Cebolla', 'Atun', 'Burrata']
 
 def recomendacion_productos():
-    usuario1, usuario2 = fn.ingresar_datos()
-
     while True:
         opcion = input('''
 1. Productos en comun
 2. Productos exclusivos
 3. Catalogo total
-4. Recomendaciones''')
+4. Recomendaciones
+5. Salir
+=> ''')
         if opcion == '1':
             producto_comun = fn.productos_comun(usuario1, usuario2)
             print(f'Productos en comun:')
@@ -28,7 +29,16 @@ def recomendacion_productos():
             print(conjunto)
 
         elif opcion == '4':
-            reco = fn.recomendacion()
-            print(reco)
+            r1, r2 = fn.recomendar(usuario1, usuario2)
+
+            print("Recomendaciones para el usuario 1:", r1)
+            print("Recomendaciones para usuario 2:", r2)
+        
+        elif opcion == '5':
+            print('Adios!')
+            break
+        
+        else:
+            print('Por favor ingrese numeros del 1 al 5!')
 
 recomendacion_productos()
