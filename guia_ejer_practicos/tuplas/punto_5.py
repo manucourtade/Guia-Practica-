@@ -10,3 +10,5 @@ def datos_usuario():
 
 print('TUPLA RESULTANTE')
 print(datos_usuario())
+
+#FIN GUIA TUPLA
